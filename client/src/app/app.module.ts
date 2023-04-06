@@ -18,6 +18,7 @@ import { PinturaComponent } from './components/categoria/pintura/pintura.compone
 import { TejidoComponent } from './components/categoria/tejido/tejido.component';
 
 import { DatosPService } from './services/datos-p.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DatosPService } from './services/datos-p.service';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     MatButtonModule,
     MatMenuModule

@@ -9,7 +9,7 @@ import { Producto } from '../models/Producto';
 })
 export class DatosPService {
 
-  url = 'http://localhost:300/vender'
+  url = 'http://localhost:3000/vender'
 
   constructor(private http:HttpClient) { }
 

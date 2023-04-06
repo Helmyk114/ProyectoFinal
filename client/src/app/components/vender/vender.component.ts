@@ -9,7 +9,7 @@ import { DatosPService } from 'src/app/services/datos-p.service';
 })
 export class VenderComponent implements OnInit {
 
-  productos:any = [];
+  productos: any = [];
 
   constructor (private datosPService: DatosPService){}
 

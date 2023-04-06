@@ -3,25 +3,25 @@ const db = require('../dataBase/baseDatos')
 controller = {};
 
 controller.listarProductos = (req,res)=>{
-    db.query('SELECT * FROM producto'), (err, rows, fields)=>{
+    db.query('SELECT * FROM productos',(err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }
-        else
-        {
-            console.log(err);
+        else{
+            console.error(err)
         }
-    };
+    });
+    
 }
 
-controller.crearProducto = async (req,res) =>{
-    await db.query('INSERT INTO producto SET ?',[req.body]);
+controller.crearProducto = (req,res) =>{
+    db.query('INSERT INTO productos SET ?',[req.body]);
     res.json({text: 'Producto Creado'})
 }
 
 controller.eliminarProducto = (req,res) =>{
     const { id } = req.params;
-    db.query('DELETE FROM producto WHERE id = ?',[id])
+    db.query('DELETE FROM productos WHERE idProducto = ?',[id])
     res.json({text: 'Eliminando Producto' + req.params.id})
 }
 

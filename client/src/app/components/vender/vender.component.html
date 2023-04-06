@@ -1,1 +1,70 @@
-<p>vender works!</p>
+<h1 class="text-center my-3">Vender un producto</h1>
+<hr>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre del producto</label>
+                                    <input type="text" class="form-control" [(ngModel)]="productos.nombreProducto" name="nombreProducto">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="mb-3">
+                                    <label class="form-label">Descripción</label>
+                                    <textarea class="form-control" name="descripcion" [(ngModel)]="productos.descripcion" rows="3"></textarea>
+                                </div>
+    
+                                <div class="form-group">
+                                    <label>Elija la imagen de su producto</label>
+                                    <input class="form-control-file" type="file" name="imagen" accept="image/*"><br>
+                                </div>
+                                
+                                <button class="btn btn-outline-primary">Publicar producto</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <!-- <img class="img-fluid" [src]="imagenUrl"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="text-center my-3">Productos subidos</h1>
+<hr>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-2">
+        <div class="card mb-3" style="max-width: 600px;" *ngFor="let producto of productos">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img [src]="producto.imagenProducto" class="img-fluid rounded-start" alt="imagenUrl">
+              </div>
+              <div class="col-md-8">
+                <div class="card-title">
+                    <h5 class="card-title text-center">{{producto.nombreProducto}}</h5>
+                </div>
+                <div class="card-body">
+                  
+                  <p class="card-text">{{producto.descripcion}}</p>
+
+                  <div class="row">
+
+                    <div class="card-footer">
+                        <button class="btn btn-outline-danger btn-block" id="producto.id">Eliminar Publicación</button>
+                    </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
