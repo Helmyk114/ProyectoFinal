@@ -13,7 +13,7 @@ export class DatosPService {
 
   constructor(private http:HttpClient) { }
 
-  obtenerPrductos(){
+  obtenerProductos(){
     return this.http.get(`${this.url}/productos`);
   };
 

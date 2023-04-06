@@ -1,67 +1,173 @@
 <h1 class="text-center my-3">Vender un producto</h1>
 <hr>
 <div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <div class="mb-3">
-                                    <label class="form-label">Nombre del producto</label>
-                                    <input type="text" class="form-control" [(ngModel)]="productos.nombreProducto" name="nombreProducto">
-                                </div>
-                            </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="card">
+                  <div class="card-body">
+                     <form>
+                        <div class="form-group">
+                           <div class="mb-3">
+                              <label class="form-label">Nombre del producto</label>
+                              <input type="text" class="form-control" [(ngModel)]="producto.nombreProducto" name="nombreProducto">
+                           </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div class="mb-3">
-                                    <label class="form-label">Descripción</label>
-                                    <textarea class="form-control" name="descripcion" [(ngModel)]="productos.descripcion" rows="3"></textarea>
-                                </div>
-    
-                                <div class="form-group">
-                                    <label>Elija la imagen de su producto</label>
-                                    <input class="form-control-file" type="file" name="imagen" accept="image/*"><br>
-                                </div>
-                                
-                                <button class="btn btn-outline-primary">Publicar producto</button>
+                        <div class="row">
+                           <div class="col">
+                               <div class="mb-3">
+                                   <label class="form-label">Categoria</label>
+                                   <select class="form-select" name="categoria" [(ngModel)]="producto.categoria">
+                                       <option selected>Elige una categoria</option>
+                                       <option value="Escultura">Escultura</option>
+                                       <option value="Joyeria">Joyeria</option>
+                                       <option value="Pintura">Pintura</option>
+                                       <option value="Tejido">Tejido</option>
+                                     </select>
+                               </div>
+                           </div>
+
+                           <div class="col">
+                              <div class="mb-3">
+                                  <label class="form-label">Estado del producto</label>
+                                  <select class="form-select" name="estado" [(ngModel)]="producto.estado">
+                                      <option selected>Elige una estado</option>
+                                      <option value="Nuevo">Nuevo</option>
+                                      <option value="Usado">Usado</option>
+                                    </select>
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                           <div class="col">
+                               <div class="mb-3">
+                                   <label class="form-label">Cantidad</label>
+                                   <input type="text" class="form-control" name="cantidad" [(ngModel)]="producto.cantidad">
+                               </div>
+                           </div>
+                           <div class="col">
+                               <div class="mb-3">
+                                   <label class="form-label">Precio</label>
+                                   <input type="text" class="form-control" name="precio" [(ngModel)]="producto.precio">
+                               </div>
+                           </div>
+                       </div>
+
+                       <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Descuento</label>
+                                <select class="form-select" name="descuento" [(ngModel)]="producto.descuento">
+                                    <option selected>Elige una estado</option>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                  </select>
                             </div>
-                        </form>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Porcentaje</label>
+                                <input type="text" class="form-control" name="valor" [(ngModel)]="producto.valor">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="card">
-                    <!-- <img class="img-fluid" [src]="imagenUrl"> -->
-                </div>
+                        <div class="form-group">
+                           <div class="mb-3">
+                              <label class="form-label">Descripción</label>
+                              <textarea class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" rows="3"></textarea>
+                           </div>
+    
+                           <div class="form-group">
+                              <label>Url de la imagen</label>
+                              <input class="form-control-file" type="url" name="imagen" [(ngModel)]="producto.imagenProducto"><br>
+                           </div>
+
+                        </div>
+                        <br>
+                           <button class="btn btn-outline-primary" (click)="guardarProducto()">Publicar producto</button>
+                     </form>
+                  </div>
             </div>
-        </div>
-    </div>
+         </div>
+
+<!-- Previsualizacion del producto -->
+         <div class="col-md-4">
+            <div class="card">
+               <img class="card-img-top" [src]="producto.imagenProducto == '' ? '../../../assets/img/noImagen.png':producto.imagenProducto">
+                    
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
 <h1 class="text-center my-3">Productos subidos</h1>
 <hr>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-2">
-        <div class="card mb-3" style="max-width: 600px;" *ngFor="let producto of productos">
+        <div class="card mb-3" style="max-width: 600px;" *ngFor="let articulo of productos">
             <div class="row g-0">
               <div class="col-md-4">
-                <img [src]="producto.imagenProducto" class="img-fluid rounded-start" alt="imagenUrl">
+                <img [src]="articulo.imagenProducto" class="img-fluid rounded-start" alt="imagenUrl">
               </div>
               <div class="col-md-8">
                 <div class="card-title">
-                    <h5 class="card-title text-center">{{producto.nombreProducto}}</h5>
+                    <h2 class="card-title text-center">{{articulo.nombreProducto}}</h2>
                 </div>
                 <div class="card-body">
                   
-                  <p class="card-text">{{producto.descripcion}}</p>
+                  <p class="card-text">{{articulo.descripcion}}</p>
 
                   <div class="row">
+                     <div class="col">
+                         <label> Categoria:</label>
+                     </div>
+                     <div class="col">
+                         <p>{{articulo.categoria}}</p>
+                     </div>
+ 
+                     <div class="col">
+                         <label> Estado:</label>
+                     </div>
+                     <div class="col">
+                         <p>{{articulo.estado}}</p>
+                     </div>
+ 
+                     <div class="row">
+                         <div class="col">
+                             <label> Descuento:</label>
+                         </div>
+                         <div class="col">
+                             <p>{{articulo.descuento}}</p>
+                         </div>
+                         <div class="col">
+                             <label> Porcentaje:</label>
+                         </div>
+                         <div class="col">
+                             <p>{{articulo.valor}}%</p>
+                         </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col">
+                            <label>Cantidad:</label>
+                        </div>
+                        <div class="col">
+                            <p>{{articulo.cantidad}}</p>
+                        </div>
+                        <div class="col">
+                            <label>Precio:</label>
+                        </div>
+                        <div class="col">
+                            <p>{{articulo.precio}} COP</p>
+                        </div>
+                    </div>
 
                     <div class="card-footer">
-                        <button class="btn btn-outline-danger btn-block" id="producto.id">Eliminar Publicación</button>
+                        <button class="btn btn-outline-danger btn-block" (click)="eliminarProducto(articulo.idProducto)">Eliminar Publicación</button>
                     </div>
               </div>
             </div>
