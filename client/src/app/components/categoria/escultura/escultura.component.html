@@ -1,23 +1,30 @@
-
 <img id="banner" src="../../../../assets/img/escultura.png" alt="">
 
 <h1 id="titulo">Encunetra algo que te enamore</h1>
 <hr>
 
-<div class="col-md-4">
-    <div class="card" *ngFor="let escultura of esculturas">
-       <img class="card-img-top" style="max-height: 390px;" [src]="escultura.imagenProducto == '' ? '../../../assets/img/noImagen.png':escultura.imagenProducto">
-       
-       <div class="card-body">
-          <h2>{{escultura.nombreProducto == '' ? 'Nombre del producto': escultura.nombreProducto}}.</h2>
-          <p>{{escultura.descripcion == '' ? 'Descripción del producto': escultura.descripcion}}</p>
-          <p>{{escultura.precio == 0 ? '0': escultura.precio}}$</p>
-
-       </div>
-       
-       <div class=" card-footer d-md-flex justify-content-md-end">
-          <button class="btn btn-outline-success">Comprar</button>
-      </div>
-       
-    </div>
+<div class="container">
+   <div class="row row-cols-1 row-cols-md-2 g-2">
+      <div class="card mb-3" style="max-width: 365px;" *ngFor="let escultura of esculturas">
+         <div class="row ">
+            <div class="col">
+               <img class="card-img-top" style="max-height: 200px;" [src]="escultura.imagenProducto == '' ? '../../../assets/img/noImagen.png':escultura.imagenProducto">
+               
+               <div class="card-body">
+                  <h2 class="card-title">{{escultura.nombreProducto == '' ? 'Nombre del producto': escultura.nombreProducto}}.</h2>
+                  <p class="card-text">{{escultura.descripcion == '' ? 'Descripción del producto': escultura.descripcion}}</p>
+                  <p>Precio: {{escultura.precio == 0 ? '0': escultura.precio}}$</p>
+   
+                  <div class=" card-footer d-md-flex justify-content-md-end">
+                     <button class="btn btn-outline-success">Comprar</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>      
+   </div>
 </div>
+
+
+
+

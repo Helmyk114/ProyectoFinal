@@ -19,7 +19,11 @@ export class DatosPService {
 
   obtenerCategoria(categoria:string){
     return this.http.get(`${this.url}/productos/${categoria}`);
-  }
+  };
+
+  obtenerOferta(descuento:string){
+    return this.http.get(`${this.url}/productos/${descuento}`);
+  };
 
   guardarProducto(producto:Producto){
     return this.http.post(`${this.url}/productos`,producto);

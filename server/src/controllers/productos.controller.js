@@ -14,8 +14,7 @@ controller.listarProductos = (req,res) =>{
 }
 
 controller.listarProductoCategoria = (req,res) =>{
-    const { categoria } = req.params
-    console.log(categoria);
+    const { categoria } = req.params;
     db.query('SELECT * FROM productos WHERE categoria = ?',[categoria],(err, rows, fields)=>{
         if(!err){
             res.json(rows);
@@ -24,7 +23,19 @@ controller.listarProductoCategoria = (req,res) =>{
             console.error(err)
         }
     });
-}
+};
+
+controller.listarProductoOferta = (req,res) =>{
+    const { descuento } = req.params
+    db.query('SELECT * FROM productos WHERE descuento = ?',[descuento],(err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        }
+        else{
+            console.error(err)
+        }
+    });
+};
 
 controller.crearProducto = (req,res) =>{
     db.query('INSERT INTO productos SET ?',[req.body]);

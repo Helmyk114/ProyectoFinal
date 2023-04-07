@@ -1,1 +1,53 @@
-<p>ofertas works!</p>
+
+<div class="container-fluid">
+    <ngb-carousel  >
+      <ng-template ngbSlide>
+        <div class="banner">
+          <img src="../../../assets/img/of.png" alt="Random first slide">
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <div class="banner">
+          <img src="../../../assets/img/of3.png" alt="Random second slide">
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <div class="banner">
+          <img src="../../../assets/img/of2.png"  alt="Random third slide">
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <div class="banner">
+          <img src="../../../assets/img/of1.png" alt="Random first slide">
+        </div>
+      </ng-template>
+    </ngb-carousel>
+</div>
+
+<h1 id="titulo">Encunetra algo que te enamore</h1>
+<hr>
+
+<div class="container">
+   <div class="row row-cols-1 row-cols-md-2 g-2">
+      <div class="card mb-3" style="max-width: 365px;" *ngFor="let oferta of ofertas">
+         <div class="row ">
+            <div class="col">
+               <img class="card-img-top" style="max-height: 200px;" [src]="oferta.imagenProducto == '' ? '../../../assets/img/noImagen.png':oferta.imagenProducto">
+               
+               <div class="card-body">
+                  <h2 class="card-title">{{oferta.nombreProducto == '' ? 'Nombre del producto': oferta.nombreProducto}}.</h2>
+                  <p class="card-text">{{oferta.descripcion == '' ? 'Descripción del producto': oferta.descripcion}}</p>
+                  <p>Precio: {{oferta.precio == 0 ? '0': oferta.precio}}$</p>
+   
+                  <div class=" card-footer d-md-flex justify-content-md-end">
+                     <button class="btn btn-outline-success">Comprar</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>      
+   </div>
+</div>

@@ -1,1 +1,26 @@
-<p>tejido works!</p>
+<img id="banner" src="../../../../assets/img/pintura.png" alt="">
+
+<h1 id="titulo">Encunetra algo que te enamore</h1>
+<hr>
+
+<div class="container">
+   <div class="row row-cols-1 row-cols-md-2 g-2">
+      <div class="card mb-3" style="max-width: 365px;" *ngFor="let tejido of tejidos">
+         <div class="row ">
+            <div class="col">
+               <img class="card-img-top" style="max-height: 200px;" [src]="tejido.imagenProducto == '' ? '../../../assets/img/noImagen.png':tejido.imagenProducto">
+               
+               <div class="card-body">
+                  <h2 class="card-title">{{tejido.nombreProducto == '' ? 'Nombre del producto': tejido.nombreProducto}}.</h2>
+                  <p class="card-text">{{tejido.descripcion == '' ? 'Descripción del producto': tejido.descripcion}}</p>
+                  <p>Precio: {{tejido.precio == 0 ? '0': tejido.precio}}$</p>
+   
+                  <div class=" card-footer d-md-flex justify-content-md-end">
+                     <button class="btn btn-outline-success">Comprar</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>      
+   </div>
+</div>
