@@ -22,7 +22,7 @@ export class DatosPService {
   };
 
   obtenerOferta(descuento:string){
-    return this.http.get(`${this.url}/productos/${descuento}`);
+    return this.http.get(`${this.url}/productos/descuento/${descuento}`);
   };
 
   guardarProducto(producto:Producto){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/models/Producto';
 import { DatosPService } from 'src/app/services/datos-p.service';
+import  Swal  from "sweetalert2";
 
 @Component({
   selector: 'app-vender',
@@ -43,22 +44,39 @@ export class VenderComponent implements OnInit {
 
   guardarProducto(){
     this.datosPService.guardarProducto(this.producto).subscribe(
-      res =>{
-        console.log(res);
-        location.reload();
-      },
-      err => console.error(err)
-      
+      res => Swal.fire({
+        icon: 'success',
+        title: 'Producto guardado',
+        text:'Su producto ha sido guardado correctamente'
+      }).then((resultado) =>{
+        if (resultado) {
+          location.reload();
+          console.log(res);
+        }
+      }),
+
+      err => Swal.fire({
+        icon: 'error',
+        title: 'Opps...',
+        text: 'Su producto no se pudo guardar correctamente'
+      })
     )
   };
 
   eliminarProducto(idProducto: string){
-    this.datosPService.eliminarProducto(idProducto).subscribe(
-      res => {
-        console.log(res);
-        this.listarProductos();
-      },
-      err => console.log(err)
-    )
+    Swal.fire({
+        icon: 'info',
+        title: 'Desea eliminar este producto',
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar'
+      }).then((resultado) =>{
+        if(resultado.isConfirmed){
+          this.datosPService.eliminarProducto(idProducto).subscribe(
+            res =>{
+              console.log(res);
+              this.listarProductos();
+            })
+        }
+      })
   };
 }

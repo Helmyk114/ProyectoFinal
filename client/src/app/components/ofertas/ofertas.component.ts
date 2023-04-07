@@ -14,7 +14,7 @@ export class OfertasComponent implements OnInit{
   
     ngOnInit(): void {
         const descuento = 'Si';
-        this.datosPService.obtenerCategoria(descuento).subscribe(
+        this.datosPService.obtenerOferta(descuento).subscribe(
           res =>{
             this.ofertas = res;
           },

@@ -7,7 +7,7 @@ const controller = require('../controllers/productos.controller')
 
 router.get('/',controller.listarProductos);
 router.get('/:categoria',controller.listarProductoCategoria);
-router.get('/:descuento',controller.listarProductoOferta);
+router.get('/descuento/:descuento',controller.listarProductoOferta);
 router.post('/',controller.crearProducto);
 router.delete('/:id',controller.eliminarProducto);
 
