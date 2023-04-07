@@ -96,10 +96,21 @@
 <!-- Previsualizacion del producto -->
          <div class="col-md-4">
             <div class="card">
-               <img class="card-img-top" [src]="producto.imagenProducto == '' ? '../../../assets/img/noImagen.png':producto.imagenProducto">
-                    
+               <img class="card-img-top" style="max-height: 390px;" [src]="producto.imagenProducto == '' ? '../../../assets/img/noImagen.png':producto.imagenProducto">
+               
+               <div class="card-body">
+                  <h2>{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
+                  <p>{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
+                  <p>{{producto.precio == 0 ? '0': producto.precio}}$</p>
+
+               </div>
+               
+               <div class=" card-footer d-md-flex justify-content-md-end">
+                  <button class="btn btn-outline-success">Comprar</button>
+              </div>
+               
             </div>
-         </div>
+        </div>
       </div>
    </div>
 </div>
@@ -108,10 +119,10 @@
 <hr>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-2">
-        <div class="card mb-3" style="max-width: 600px;" *ngFor="let articulo of productos">
+        <div class="card mb-3" style="max-width: 600px; " *ngFor="let articulo of productos">
             <div class="row g-0">
               <div class="col-md-4">
-                <img [src]="articulo.imagenProducto" class="img-fluid rounded-start" alt="imagenUrl">
+                <img [src]="articulo.imagenProducto" class="img-fluid rounded-start" style="max-height: 260px;" alt="imagenUrl">
               </div>
               <div class="col-md-8">
                 <div class="card-title">
@@ -162,11 +173,11 @@
                             <label>Precio:</label>
                         </div>
                         <div class="col">
-                            <p>{{articulo.precio}} COP</p>
+                            <p>{{articulo.precio}}$</p>
                         </div>
                     </div>
 
-                    <div class="card-footer">
+                    <div class="card-footer d-md-flex justify-content-md-end">
                         <button class="btn btn-outline-danger btn-block" (click)="eliminarProducto(articulo.idProducto)">Eliminar Publicación</button>
                     </div>
               </div>

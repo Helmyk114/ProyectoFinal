@@ -17,11 +17,15 @@ export class DatosPService {
     return this.http.get(`${this.url}/productos`);
   };
 
+  obtenerCategoria(categoria:string){
+    return this.http.get(`${this.url}/productos/${categoria}`);
+  }
+
   guardarProducto(producto:Producto){
     return this.http.post(`${this.url}/productos`,producto);
-  }
+  };
 
   eliminarProducto(id: string){
     return this.http.delete(`${this.url}/productos/${id}`)
-  }
+  };
 }

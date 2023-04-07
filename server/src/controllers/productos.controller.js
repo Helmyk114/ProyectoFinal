@@ -2,7 +2,7 @@ const db = require('../dataBase/baseDatos')
 
 controller = {};
 
-controller.listarProductos = (req,res)=>{
+controller.listarProductos = (req,res) =>{
     db.query('SELECT * FROM productos',(err, rows, fields)=>{
         if(!err){
             res.json(rows);
@@ -11,7 +11,19 @@ controller.listarProductos = (req,res)=>{
             console.error(err)
         }
     });
-    
+}
+
+controller.listarProductoCategoria = (req,res) =>{
+    const { categoria } = req.params
+    console.log(categoria);
+    db.query('SELECT * FROM productos WHERE categoria = ?',[categoria],(err, rows, fields)=>{
+        if(!err){
+            res.json(rows);
+        }
+        else{
+            console.error(err)
+        }
+    });
 }
 
 controller.crearProducto = (req,res) =>{

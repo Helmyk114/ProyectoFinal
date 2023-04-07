@@ -45,7 +45,7 @@ export class VenderComponent implements OnInit {
     this.datosPService.guardarProducto(this.producto).subscribe(
       res =>{
         console.log(res);
-        this.listarProductos();
+        location.reload();
       },
       err => console.error(err)
       
