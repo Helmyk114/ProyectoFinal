@@ -4,10 +4,8 @@ const cors = require('cors')
 const path = require('path');
 
 
-
 //Importando las rutas
 const productoRoutes = require('./routers/productos.routes')
-
 
 
 //Mediadores
@@ -20,12 +18,6 @@ app.use(express.urlencoded({extended:true}))
 
 //Ruta para productos
 app.use('/vender/productos',productoRoutes)
-
-
-
-
-
-
 
 
 //Puerto de conexion al servidor

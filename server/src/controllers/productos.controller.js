@@ -1,8 +1,8 @@
-const db = require('../dataBase/baseDatos')
+const db = require('../dataBase/baseDatos');
 
-controller = {};
+controllerP = {};
 
-controller.listarProductos = (req,res) =>{
+controllerP.listarProductos = (req,res) =>{
     db.query('SELECT * FROM productos',(err, rows, fields)=>{
         if(!err){
             res.json(rows);
@@ -13,7 +13,7 @@ controller.listarProductos = (req,res) =>{
     });
 }
 
-controller.listarProductoCategoria = (req,res) =>{
+controllerP.listarProductoCategoria = (req,res) =>{
     const { categoria } = req.params;
     db.query('SELECT * FROM productos WHERE categoria = ?',[categoria],(err, rows, fields)=>{
         if(!err){
@@ -25,7 +25,7 @@ controller.listarProductoCategoria = (req,res) =>{
     });
 };
 
-controller.listarProductoOferta = (req,res) =>{
+controllerP.listarProductoOferta = (req,res) =>{
     const { descuento } = req.params
     db.query('SELECT * FROM productos WHERE descuento = ?',[descuento],(err, rows, fields)=>{
         if(!err){
@@ -37,12 +37,12 @@ controller.listarProductoOferta = (req,res) =>{
     });
 };
 
-controller.crearProducto = (req,res) =>{
+controllerP.crearProducto = (req,res) =>{
     db.query('INSERT INTO productos SET ?',[req.body]);
     res.json({text: 'Producto Creado'})
 }
 
-controller.eliminarProducto = (req,res) =>{
+controllerP.eliminarProducto = (req,res) =>{
     const { id } = req.params;
     db.query('DELETE FROM productos WHERE idProducto = ?',[id])
     res.json({text: 'Eliminando Producto' + req.params.id})
@@ -50,4 +50,4 @@ controller.eliminarProducto = (req,res) =>{
 
 
 
-module.exports = controller;
+module.exports = controllerP;
