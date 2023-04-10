@@ -2,28 +2,21 @@
 
 <h1 id="titulo">Encunetra algo que te enamore</h1>
 <hr>
-
-<div class="container">
-   <div class="row row-cols-1 row-cols-md-2 g-2">
-      <div class="card mb-3" style="max-width: 365px;" *ngFor="let escultura of esculturas">
-         <div class="row ">
-            <div class="col">
-               <img class="card-img-top" style="max-height: 200px;" [src]="escultura.imagenProducto == '' ? '../../../assets/img/noImagen.png':escultura.imagenProducto">
-               
-               <div class="card-body">
+<body style="margin-top: 20px; ">
+  <div class="container__principal">
+      <div class="row" style="justify-content: center;">
+          <div class="card"  *ngFor="let escultura of esculturas">
+              <img class="card-img-top" style="max-height: 200px; margin-right: 100px;" [src]="escultura.imagenProducto == '' ? '../../../assets/img/noImagen.png':escultura.imagenProducto">
+              <div class="card-body">
                   <h2 class="card-title">{{escultura.nombreProducto == '' ? 'Nombre del producto': escultura.nombreProducto}}.</h2>
                   <p class="card-text">{{escultura.descripcion == '' ? 'Descripción del producto': escultura.descripcion}}</p>
                   <p>Precio: {{escultura.precio == 0 ? '0': escultura.precio}}$</p>
-   
-                  <div class=" card-footer d-md-flex justify-content-md-end">
-                     <button class="btn btn-outline-success">Comprar</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>      
-   </div>
-</div>
+                  <a href="#" class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
 
 
 

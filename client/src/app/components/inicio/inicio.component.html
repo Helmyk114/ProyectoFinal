@@ -96,31 +96,33 @@
     </div>
 </div>
 
-<div class="continer-fluid">
-    <body style="margin-top: 100px; ">'
-        <h1 class="title" >Productos mas vendidos</h1>
-        <div class="card"  *ngFor="let producto of productos">
-            <img class="card-img-top" style="max-height: 200px;" [src]="producto.imagenProducto == '' ? '../../../assets/img/noImagen.png':producto.imagenProducto">
-            <div class="card-body">
-                <h2 class="card-title">{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
-                <p class="card-text">{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
-                <p>Precio: {{producto.precio == 0 ? '0': producto.precio}}$</p>
-                <a href="#" class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
+<h1 class="title">Productos</h1>
+    <body style="margin-top: 20px; ">
+        <div class="container__principal">
+            <div class="row" style="justify-content: center;">
+                <div class="card"  *ngFor="let producto of productos">
+                    <img class="card-img-top" style="max-height: 200px; margin-right: 100px;" [src]="producto.imagenProducto == '' ? '../../../assets/    img/    noImagen.png':producto.imagenProducto">
+                    <div class="card-body">
+                        <h2 class="card-title">{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
+                        <p class="card-text">{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
+                        <p>Precio: {{producto.precio == 0 ? '0': producto.precio}}$</p>
+                        <a href="#" class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
+                    </div>
+                </div>
             </div>
         </div>
-            
     </body>
-</div>
 
-    <hr>
+<hr>
 
 <div class="conteiner" style="padding: -1%; background-color: #efefef;">
-        <div >
-            <h1 style="text-align: center;">¿Que es +Art?</h1>
+    <div >
+        <h1 style="text-align: center;">¿Que es +Art?</h1>
 
-            <div style="width: 80%;">
-                <p style="margin-left: 40%;font-family:inherit">Es un negocio en línea emocionante y vibrante que permite a los amantes de las artesanías descubrir y comprar productos únicos y auténticos, y a los artistas y artesanos mostrar y vender su trabajo al mundo. Es un lugar donde la creatividad, la autenticidad y la calidad se unen para ofrecer una experiencia de compra excepcional y satisfactoria para todos.</p>
-            </div>
+        <div style="width: 80%;">
+            <p style="margin-left: 40%;font-family:inherit">Es un negocio en línea emocionante y vibrante que permite a los amantes de las artesanías descubrir y comprar productos únicos y auténticos, y a los artistas y artesanos mostrar y vender su trabajo al mundo. Es un lugar donde la creatividad, la autenticidad y la calidad se unen para ofrecer una experiencia de compra excepcional y satisfactoria para todos.</p>
         </div>
+    </div>
 </div>
+
 

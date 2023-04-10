@@ -2,25 +2,18 @@
 
 <h1 id="titulo">Encunetra algo que te enamore</h1>
 <hr>
-
-<div class="container">
-   <div class="row row-cols-1 row-cols-md-2 g-2">
-      <div class="card mb-3" style="max-width: 365px;" *ngFor="let joyeria of joyerias">
-         <div class="row ">
-            <div class="col">
-               <img class="card-img-top" style="max-height: 200px;" [src]="joyeria.imagenProducto == '' ? '../../../assets/img/noImagen.png':joyeria.imagenProducto">
-               
-               <div class="card-body">
+<body style="margin-top: 20px; ">
+  <div class="container__principal">
+      <div class="row" style="justify-content: center;">
+          <div class="card"  *ngFor="let joyeria of joyerias">
+              <img class="card-img-top" style="max-height: 200px; margin-right: 100px;" [src]="joyeria.imagenProducto == '' ? '../../../assets/img/noImagen.png':joyeria.imagenProducto">
+              <div class="card-body">
                   <h2 class="card-title">{{joyeria.nombreProducto == '' ? 'Nombre del producto': joyeria.nombreProducto}}.</h2>
                   <p class="card-text">{{joyeria.descripcion == '' ? 'Descripción del producto': joyeria.descripcion}}</p>
                   <p>Precio: {{joyeria.precio == 0 ? '0': joyeria.precio}}$</p>
-   
-                  <div class=" card-footer d-md-flex justify-content-md-end">
-                     <button class="btn btn-outline-success">Comprar</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>      
-   </div>
-</div>
+                  <a href="#" class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
