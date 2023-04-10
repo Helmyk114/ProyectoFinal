@@ -43,7 +43,7 @@ export class ContactoComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }
+  };
 
   enviarComentario() {
     if(this.form.valid){
@@ -73,10 +73,6 @@ export class ContactoComponent implements OnInit {
         text:'Hay datos inválidos en el formulario',
       })
     }
-  }
-
-
-  restForm(){
-    this.form.reset();
   };
+
 }

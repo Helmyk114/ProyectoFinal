@@ -2,21 +2,15 @@
     color:gray;
     font-size: 12px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-  
 }
- #respuesta{
-    justify-content: end;
-    text-align: end;
-    margin-right: 120px;
- }
 
 .btn1, .btn2{
-    margin-right: 14px;
+
     border-radius: 8px;
 }
 
 .botones{
-    margin-right: 75px;
+    margin-left: 250px;
 }
 
 #titulo{
