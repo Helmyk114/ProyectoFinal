@@ -11,8 +11,8 @@ import { AutorizacionService } from 'src/app/services/autorizacion.service';
 export class IniciarSesionComponent implements OnInit{
 
   usuario:Usuario ={
-    usuario: 'Checho',
-    contrasena: '1234567890'
+    usuario: '',
+    contrasena: ''
   }
 
   constructor(private autorizacionServie:AutorizacionService,

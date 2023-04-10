@@ -5,8 +5,9 @@ const path = require('path');
 
 
 //Importando las rutas
-const productoRoutes = require('./routers/productos.routes')
-const usuariosRoutes = require('./routers/usuarios.routes')
+const productoRoutes = require('./routers/productos.routes');
+const usuariosRoutes = require('./routers/usuarios.routes');
+const formularioRoutes = require('./routers/formulario.routes');
 
 
 //Mediadores
@@ -14,14 +15,18 @@ const app = express();
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:true}));
 
 
 //Ruta para productos
-app.use('/vender/productos',productoRoutes)
+app.use('/vender/productos',productoRoutes);
 
-//Rura para usuarios
-app.use('/usuario',usuariosRoutes)
+//Ruta para usuarios
+app.use('/usuario',usuariosRoutes);
+
+//Ruta pata el formulario
+app.use('/formulario',formularioRoutes);
+
 
 
 //Puerto de conexion al servidor

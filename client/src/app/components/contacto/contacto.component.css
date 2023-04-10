@@ -1,0 +1,53 @@
+#mensaje{
+    color:gray;
+    font-size: 12px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+ #respuesta{
+    justify-content: end;
+    text-align: end;
+    margin-right: 120px;
+ }
+
+.btn1, .btn2{
+    margin-right: 14px;
+    border-radius: 8px;
+}
+
+.botones{
+    margin-right: 75px;
+}
+
+#titulo{
+    margin-left: 140px ;
+    margin-bottom: 40px;
+}
+
+.form-control:invalid{
+    background-color: rgb(248, 177, 177);
+}
+
+#form{
+    background: rgb(230,178,178);
+    background: radial-gradient(circle, rgba(230,178,178,0.10407913165266103) 9%, rgba(82,191,217,0.33657212885154064) 100%);
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 40px 2px;
+    box-shadow: 0px 5px 10px -5px;
+    
+}
+
+#logo1{
+    height: 90px;
+    width: 130px;
+    margin-left: 30px;
+} 
+.green-vali{
+    
+    background-color: rgb(192, 255, 167);
+}
+
+.red-vali{
+    background-color: rgb(253, 187, 185);
+}

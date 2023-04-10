@@ -9,7 +9,7 @@ import { AutorizacionService } from '../services/autorizacion.service';
 export class AutentificacionGuard implements CanActivate {
 
   constructor(private autorizacionService:AutorizacionService,
-              private router:Router){}
+              public router:Router){}
 
   canActivate():boolean{
     if(!this.autorizacionService.estaAutorizado()){

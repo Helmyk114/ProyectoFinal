@@ -18,7 +18,7 @@ import { PinturaComponent } from './components/categoria/pintura/pintura.compone
 import { TejidoComponent } from './components/categoria/tejido/tejido.component';
 
 import { DatosPService } from './services/datos-p.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
@@ -26,6 +26,9 @@ import { IniciarSesionComponent } from './components/miCuenta/iniciar-sesion/ini
 import { RegistroComponent } from './components/miCuenta/registro/registro.component';
 import { AutorizacionService } from './services/autorizacion.service';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { ComprarComponent } from './components/comprar/comprar.component';
+import { FormularioService } from './services/formulario.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     FooterComponent,
     ContactoComponent,
     IniciarSesionComponent,
-    RegistroComponent
+    RegistroComponent,
+    AdministradorComponent,
+    ComprarComponent
   ],
   imports: [
     BrowserModule,
@@ -49,13 +54,15 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [
     DatosPService,
     AutorizacionService,
+    FormularioService,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
     JwtHelperService
   ],

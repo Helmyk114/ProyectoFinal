@@ -7,6 +7,8 @@ import { OfertasComponent } from './components/ofertas/ofertas.component';
 import { VenderComponent } from './components/vender/vender.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { ComprarComponent } from './components/comprar/comprar.component';
 
 //Barra de Navegacion sub-menus-Categorias
 import { EsculturaComponent } from './components/categoria/escultura/escultura.component';
@@ -20,6 +22,7 @@ import { RegistroComponent } from './components/miCuenta/registro/registro.compo
 
 //Guards
 import { AutentificacionGuard } from './guards/autentificacion.guard';
+import { RolesGuard } from './guards/roles.guard';
 
 const routes: Routes = [
 //Barra de Navegacion paginas principales
@@ -28,6 +31,8 @@ const routes: Routes = [
   {path:'vender',component:VenderComponent, canActivate: [AutentificacionGuard]},
   {path:'inicio',component:InicioComponent},
   {path:'contacto',component:ContactoComponent},
+  {path:'administrador',component:AdministradorComponent, canActivate: [RolesGuard], data: { expectedRole: 'Administrador'}},
+  {path:'comprar',component:ComprarComponent},
 
 //Barra de Navegacion sub-menus-Categorias
   {path:'escultura',component:EsculturaComponent},

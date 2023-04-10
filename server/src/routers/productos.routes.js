@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Importar los controladores
-const controllerP = require('../controllers/productos.controller')
+const controllerP = require('../controllers/productos.controller');
 
 
 router.get('/',controllerP.listarProductos);

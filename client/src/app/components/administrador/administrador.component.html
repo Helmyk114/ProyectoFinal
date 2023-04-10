@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="card" style="width: 18rem;" *ngFor="let comentario of comentarios">
+        <div class="card-body">
+          <h5 class="card-title">{{comentario.nombre}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{comentario.correo}}</h6>
+          <p class="card-text">{{comentario.mensaje}}</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+</div>

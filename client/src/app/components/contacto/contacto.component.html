@@ -1,1 +1,82 @@
-<p>contacto works!</p>
+<div class="container" id="form">
+  <img id="logo1" src="../../../assets/img/Logo1-removebg-preview.png" alt="LOGO">
+  <h4 id="titulo">Enviar un comentario</h4>
+
+  <form [formGroup]="form">
+    <div class="row row form-group justify-content-md-center">
+      <div class="col-xl-4">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="comentario.nombre" name="nombre" 
+        [class.green-vali]="this.form.get('nombre')?.valid" 
+        [class.red.vali]="this.form.get('nombre') && this.form.get('nombre')?.touched"
+        formControlName="nombre">
+        <span *ngIf="this.form.get('nombre')?.errors?.['required']" id="mensaje">(Este campo no puede estar vacío)</span>
+        <span *ngIf="this.form.get('nombre')?.errors?.['maxLength']" id="mensaje">(Máximo 10 caracteres)</span>
+      </div>
+
+      <div class="col-xl-4">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" [(ngModel)]="comentario.apellido" name="apellido" 
+        [class.green-vali]="this.form.get('apellido')?.valid" 
+        [class.red.vali]="this.form.get('apellido') && this.form.get('apellido')?.touched"
+        formControlName="apellido">
+        <span *ngIf="this.form.get('apellido')?.errors?.['required']" id="mensaje">(Este campo no puede estar vacío)</span>
+        <span *ngIf="this.form.get('apellido')?.errors?.['maxLength']" id="mensaje">(Máximo 10 caracteres)</span>
+      </div>
+
+      <div class="row justify-content-md-center">
+         <div class="col-xl-4">
+            <label class="form-label">Correo</label>
+            <input type="email" class="form-control" [(ngModel)]="comentario.correo" name="email" 
+            [class.green-vali]="this.form.get('email')?.valid" 
+            [class.red.vali]="this.form.get('email') && this.form.get('email')?.touched"
+            formControlName="email">
+            <span *ngIf="this.form.get('email')?.errors?.['required']" id="mensaje">(Este campo no puede estar vacío)</span>
+            <span *ngIf="this.form.get('email')?.errors?.['email']" id="mensaje">(El correo electronico no es válido)</span>
+         </div>
+
+         <div class="col-xl-4">
+            <label class="form-label">Telefono</label>
+            <input type="text" class="form-control" [(ngModel)]="comentario.telefono" name="telefono" 
+            [class.green-vali]="this.form.get('telefono')?.valid" 
+            [class.red.vali]="this.form.get('telefono') && this.form.get('telefono')?.touched"
+            formControlName="telefono">
+            <span *ngIf="this.form.get('telefono')?.errors?.['required']" id="mensaje">(Este campo no puede esta vacío)</span>
+            <span *ngIf="this.form.get('telefono')?.errors?.['minLength']" id="mensaje">(Minimo deben ser 6 númreos)</span>
+            <span *ngIf="this.form.get('telefono')?.errors?.['maxLength']" id="mensaje">(Maximo deben ser 10 números)</span>
+            <span *ngIf="this.form.get('telefono')?.errors?.['pattern']" id="mensaje">(Solo valores numericos)</span>
+         </div>
+      </div>
+
+      <div class="row justify-content-md-center">
+         <div class="col-xl-8 justify-content-md-center">
+            <label class="form-label">Comentario</label>
+            <textarea type="text" class="form-control" name="mensaje" [(ngModel)]="comentario.mensaje" rows="3"
+            [class.green-vali]="this.form.get('mensaje')?.valid" 
+            [class.red.vali]="this.form.get('mensaje') && this.form.get('mensaje')?.touched"
+            formControlName="mensaje"></textarea>
+            <span *ngIf="this.form.get('mensaje')?.errors?.['required']" id="mensaje">(Este campo no puede estar vacío)</span>
+            <span *ngIf="this.form.get('mensaje')?.errors?.['maxLength']" id="mensaje">(Maimo deben ser 200 caracteres)</span>
+         </div>
+
+      </div>
+
+    </div>
+  </form>
+</div>
+
+
+
+      <div class="row">
+         <div class="col-md-6">
+            <div class="card">
+                  <div class="card-body">
+                 
+         
+                        <br>
+                           <button class="btn btn-outline-primary" (click)="enviarComentario()">Enviar mensaje</button>
+                  </div>
+            </div>
+         </div>
+      </div>
+
