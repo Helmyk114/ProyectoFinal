@@ -46,6 +46,7 @@ export class ContactoComponent implements OnInit {
   }
 
   enviarComentario() {
+    if(this.form.valid){
       this.formularioService.guardarComentario(this.comentario).subscribe(
         res=> Swal.fire({
           icon:'success',
@@ -64,6 +65,15 @@ export class ContactoComponent implements OnInit {
         })
       )
     }
+    else
+    {
+      Swal.fire({
+        icon:'error',
+        title:'Opps...',
+        text:'Hay datos inválidos en el formulario',
+      })
+    }
+  }
 
 
   restForm(){

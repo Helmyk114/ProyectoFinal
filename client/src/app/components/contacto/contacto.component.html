@@ -58,25 +58,9 @@
             <span *ngIf="this.form.get('mensaje')?.errors?.['required']" id="mensaje">(Este campo no puede estar vacío)</span>
             <span *ngIf="this.form.get('mensaje')?.errors?.['maxLength']" id="mensaje">(Maimo deben ser 200 caracteres)</span>
          </div>
-
       </div>
 
+      <button class="btn btn-outline-primary col-xl-3" (click)="enviarComentario()">Enviar mensaje</button>
     </div>
   </form>
 </div>
-
-
-
-      <div class="row">
-         <div class="col-md-6">
-            <div class="card">
-                  <div class="card-body">
-                 
-         
-                        <br>
-                           <button class="btn btn-outline-primary" (click)="enviarComentario()">Enviar mensaje</button>
-                  </div>
-            </div>
-         </div>
-      </div>
-
