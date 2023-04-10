@@ -1,12 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
   
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="nav-link" [routerLink]="['inicio']">+Art</a>
+
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       
           <div style="text-align: left; ">
@@ -28,6 +24,10 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['vender']">Vender</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['contacto']">Contacto</a>
+          </li>
    
         </ul>
   
@@ -35,8 +35,21 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
   
-        </form>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['comprar']">Carrito</a>
+            </li>
   
+            <div style="text-align: left; ">
+              <button mat-flat-button [mat-menu-trigger-for]="menu1" id="categorias" style="background-color: white;">Mi cuenta</button>
+    
+              <mat-menu #menu1="matMenu">
+                <button mat-menu-item [routerLink]="['iniciar-sesion']">Iniciar sesion</button>
+                <button mat-menu-item [routerLink]="['registro']">Registrarme</button>
+              </mat-menu>
+    
+            </div>
+          </ul>
+        </form>
       </div>
-    </div>
   </nav>

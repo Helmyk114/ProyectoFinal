@@ -6,6 +6,7 @@ const path = require('path');
 
 //Importando las rutas
 const productoRoutes = require('./routers/productos.routes')
+const usuariosRoutes = require('./routers/usuarios.routes')
 
 
 //Mediadores
@@ -18,6 +19,9 @@ app.use(express.urlencoded({extended:true}))
 
 //Ruta para productos
 app.use('/vender/productos',productoRoutes)
+
+//Rura para usuarios
+app.use('/usuario',usuariosRoutes)
 
 
 //Puerto de conexion al servidor

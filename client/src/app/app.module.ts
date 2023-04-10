@@ -19,6 +19,13 @@ import { TejidoComponent } from './components/categoria/tejido/tejido.component'
 
 import { DatosPService } from './services/datos-p.service';
 import { FormsModule } from '@angular/forms';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { IniciarSesionComponent } from './components/miCuenta/iniciar-sesion/iniciar-sesion.component';
+import { RegistroComponent } from './components/miCuenta/registro/registro.component';
+import { AutorizacionService } from './services/autorizacion.service';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,12 @@ import { FormsModule } from '@angular/forms';
     EsculturaComponent,
     JoyeriaComponent,
     PinturaComponent,
-    TejidoComponent
+    TejidoComponent,
+    InicioComponent,
+    FooterComponent,
+    ContactoComponent,
+    IniciarSesionComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +54,10 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule
   ],
   providers: [
-    DatosPService
+    DatosPService,
+    AutorizacionService,
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
