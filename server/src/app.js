@@ -8,6 +8,7 @@ const path = require('path');
 const productoRoutes = require('./routers/productos.routes');
 const usuariosRoutes = require('./routers/usuarios.routes');
 const formularioRoutes = require('./routers/formulario.routes');
+const registroURoutes = require('./routers/registroU.routes');
 
 
 //Mediadores
@@ -24,10 +25,11 @@ app.use('/vender/productos',productoRoutes);
 //Ruta para usuarios
 app.use('/usuario',usuariosRoutes);
 
-//Ruta pata el formulario
+//Ruta para el formulario
 app.use('/formulario',formularioRoutes);
 
-
+//Ruta para el registro de usuarios
+app.use('/registro',registroURoutes);
 
 //Puerto de conexion al servidor
 app.listen(3000,() =>{

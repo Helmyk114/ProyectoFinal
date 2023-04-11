@@ -1,3 +1,13 @@
+#logo1{
+    height: 90px;
+    width: 130px;
+    margin-left: 30px;
+} 
+
+#titulo{
+    margin-left: 140px ;
+    margin-bottom: 40px;
+}
 
 #form{
     background: rgb(230,178,178);
@@ -6,5 +16,4 @@
     border-radius: 10px;
     padding: 40px 2px;
     box-shadow: 0px 5px 10px -5px;
-    
 }

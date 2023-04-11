@@ -50,6 +50,7 @@
               <mat-menu #menu1="matMenu">
                 <button mat-menu-item [routerLink]="['iniciar-sesion']">Iniciar sesion</button>
                 <button mat-menu-item [routerLink]="['registro']">Registrarme</button>
+                <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesion</button>
               </mat-menu>
     
             </div>

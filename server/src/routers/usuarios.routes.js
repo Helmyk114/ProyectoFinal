@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-//Impostar controlador
+//Importar controlador
 const controllerU = require('../controllers/usuarios.controller')
 
 router.get('/',controllerU.listarUsuarios);

@@ -16,7 +16,7 @@ export class AutorizacionService {
 
   iniciarSesion(usuario:Usuario){
     return this.http.post(`${this.url}/iniciarSesion`,usuario)
-  }
+  };
 
   estaAutorizado():boolean{
     const token = localStorage.getItem('token');
@@ -24,5 +24,9 @@ export class AutorizacionService {
       return false;
     }
     return true;
-  }
+  };
+
+  cerrarSesion():void{
+    localStorage.removeItem('token');
+  };
 }
