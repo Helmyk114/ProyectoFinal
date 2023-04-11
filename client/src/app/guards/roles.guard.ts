@@ -17,12 +17,13 @@ export class RolesGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot):boolean{
     const expectedRole = route.data['expectedRole'];
     const token = localStorage.getItem('token');
+    let decodetoken:any = {};
+    decodetoken = decode(token!)
 
-    // const { rol} = decode(token!);
-    // console.log(rol)
+    console.log(decodetoken.rol)
 
-    if(!this.autorizacionService.estaAutorizado() ){
-      // || rol !== expectedRole
+    if(!this.autorizacionService.estaAutorizado() || decodetoken.rol !== expectedRole ){
+      
       console.log('Usuario no autorizado para la vista');
       return false;
     }
