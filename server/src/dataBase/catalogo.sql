@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-04-2023 a las 04:17:48
+-- Tiempo de generación: 13-04-2023 a las 01:51:12
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -40,7 +40,14 @@ CREATE TABLE `compra` (
 --
 
 INSERT INTO `compra` (`idCompra`, `idUsuario`, `idProducto`, `unidades`, `total`) VALUES
-(2, 1, 12, 2, 10000);
+(12, 1, 13, 1, 200000),
+(14, 1, 22, 1, 45000),
+(15, 1, 17, 1, 300000),
+(17, 1, 14, 1, 35000),
+(18, 1, 18, 1, 80000),
+(19, 1, 21, 1, 150000),
+(21, 1, 16, 1, 70000),
+(23, 1, 17, 1, 300000);
 
 -- --------------------------------------------------------
 
@@ -63,18 +70,8 @@ CREATE TABLE `mensaje` (
 
 INSERT INTO `mensaje` (`idMensaje`, `nombre`, `apellido`, `correo`, `telefono`, `mensaje`) VALUES
 (1, 'Sergio', 'Calvo', 'sergio.123@gmail.com', '1234567890', 'Administrador'),
-(6, 'Sergio', 'Calvo', 'sergio.123@gmail.com', '1234567890', 'Administrador'),
-(19, 'Sergio', 'esteban', 'carlos@gmail.com', '234235', 'Holi'),
-(20, '', '', '', '', ''),
-(21, 'dasdsad', 'dasd', 'juana@gmail.com', '6735673', 'dbsdfbs'),
-(22, 'gfgh', 'esteban', 'carlos@gmail.com', '6735673', 'sdcsdcs'),
 (23, 'sara', 'Cadavid', 'Sara.098@gmail.com', '234235', 'prueba correo'),
-(24, 'Martha', 'Velez', 'martha.1290@gmail.com', '234256679', 'prueba telefono'),
-(25, 'ana', 'dwad', 'iikb@gmail.com', '6735673', 'Prueba comentario'),
-(26, 'Sergio', 'Calvo', 'sergio.123@gmail.com', '5211661', 'Prueba boton'),
-(27, 'ana', 'dgasdgasdg', 'natahm@soygay.com', '23423545', 'Prueba validadores'),
-(28, 'Juan', 'Gallego', 'hasa@gmail.com', '3453756', 'Hola'),
-(29, 'Juan', 'Gallego', 'Juan@gmail.com', '3457345374', 'hola');
+(24, 'Martha', 'Velez', 'martha.1290@gmail.com', '234256679', 'prueba telefono');
 
 -- --------------------------------------------------------
 
@@ -113,18 +110,17 @@ INSERT INTO `productos` (`idProducto`, `nombreProducto`, `descripcion`, `imagenP
 (22, 'Bolso tejido', 'Bolso con diseños de flores circular de paja tejido a mano.', 'https://images.unsplash.com/photo-1527385352018-3c26dd6c3916?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'Tejido', 'Usado', 2, 45000, 'No', 0),
 (23, 'Ballena azul', 'Pintura en técnica acrílico sobre papel canson 290g tamaño 14x11 cm', 'https://images.unsplash.com/photo-1642867028805-f8c2673d4f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80', 'Pintura', 'Nuevo', 1, 250000, 'No', 0),
 (24, 'Pulsera de piedras naturales', 'Pulsera para hombre con piedras de jaspe negro, con separadores y terminaciones en plata 925.', 'https://images.unsplash.com/photo-1632670549453-7a3dfac254a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'Joyeria', 'Nuevo', 55, 38000, 'Si', 10),
-(25, 'Lectura y té', 'Obra de arte en puntillizmo en técnica de acuarela sobre papel de algodón tamaño 35x35 cm', 'https://images.unsplash.com/photo-1583243567239-3727551e0c59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=644&q=80', 'Pintura', 'Nuevo', 1, 450000, 'No', 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `productos_vendidos`
---
-
-CREATE TABLE `productos_vendidos` (
-  `idCompra` int(11) NOT NULL,
-  `idProducto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(25, 'Lectura y té', 'Obra de arte en puntillizmo en técnica de acuarela sobre papel de algodón tamaño 35x35 cm', 'https://images.unsplash.com/photo-1583243567239-3727551e0c59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=644&q=80', 'Pintura', 'Nuevo', 1, 450000, 'No', 0),
+(27, 'Brazalete cruz', 'Brazalete realizada en Plata de ley 925, un modelo de diseño rígido con figura de cruz central que también actúa como cierre.  ', 'https://images.unsplash.com/photo-1508022909583-69228d7b2f8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80', 'Joyeria', 'Usado', 1, 93000, 'Si', 10),
+(29, 'Vaca Hindú', 'Escultura decorativa de Vaca Hindú en barro pintada a mano.', 'https://images.unsplash.com/photo-1521990965826-7fc3c11371aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80', 'Escultura', 'Nuevo', 4, 29000, 'No', 0),
+(30, 'Tapiz macramé', 'Tapiz colgante en macramé color amarillo mostaza.', 'https://images.unsplash.com/photo-1590069832789-943efe055053?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80', 'Tejido', 'Nuevo', 1, 430000, 'No', 0),
+(31, 'Pulseras entorchadas', 'Brazaletes con diseño entorchado de plata 925 ajustables o con broche.', 'https://images.unsplash.com/photo-1517857399767-a9dc28f5a734?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'Joyeria', 'Nuevo', 7, 136000, 'Si', 10),
+(32, 'Cuidad de piedra', 'Pintura a lápiz de color sobre papel 50x30cm protegida con barniz mate.', 'https://images.unsplash.com/photo-1582201957424-621320ad670d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=709&q=80', 'Pintura', 'Nuevo', 1, 1500000, 'No', 0),
+(33, 'Mándala tejida', 'Mándala en macramé en aro de 10\"x10\"en cordón de algodón reciclado.', 'https://images.unsplash.com/photo-1577547078777-ff1088d792b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', 'Tejido', 'Usado', 1, 100000, 'No', 0),
+(34, 'Habitación', 'Obra de arte pictórica en acrílico sobre lienzo tamaño 50x50', 'https://images.unsplash.com/photo-1578321272794-79e82a581d5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80', 'Pintura', 'Nuevo', 1, 485000, 'No', 0),
+(35, 'Jarrón de barro', 'Jarrón decorativo en barro con estilo bohemio único hecho a mano.', 'https://images.unsplash.com/photo-1636214530723-12879a99452f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80', 'Escultura', 'Nuevo', 5, 67000, 'No', 0),
+(36, 'Maceta de búhos', 'Maceta en cerámica para plantas pequeñas en forma de tetera pintada a mano.', 'https://images.unsplash.com/photo-1604462601707-1691bd732d75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', 'Escultura', 'Nuevo', 2, 36000, 'Si', 30),
+(37, 'Porta vasos ', 'Juego de 6 porta vasos en crochet cuadrados en algodón de encaje de punto.', 'https://images.unsplash.com/photo-1627667539472-75fbc7f4654d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'Tejido', 'Nuevo', 21, 70000, 'No', 0);
 
 -- --------------------------------------------------------
 
@@ -154,6 +150,28 @@ INSERT INTO `usuario` (`idUsuario`, `nombreUsuario`, `apellidoUsuario`, `usuario
 (4, 'Juan', 'Gallego', 'juanG', 'juana@gmail.com', 'Hombre', 'Ecuador', '1234567890j', 'Usuario'),
 (5, 'Nelson', 'Mazo', 'Nelma', 'Nelson.123@hotmail.com', 'Hombre', 'Uruguay', '0987654321', 'Usuario');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vendido`
+--
+
+CREATE TABLE `vendido` (
+  `idVenta` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `unidades` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `vendido`
+--
+
+INSERT INTO `vendido` (`idVenta`, `idProducto`, `unidades`) VALUES
+(1, 20, 1),
+(2, 21, 1),
+(3, 14, 1),
+(4, 14, 1);
+
 --
 -- Índices para tablas volcadas
 --
@@ -179,17 +197,17 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`idProducto`);
 
 --
--- Indices de la tabla `productos_vendidos`
---
-ALTER TABLE `productos_vendidos`
-  ADD KEY `idCompra` (`idCompra`),
-  ADD KEY `idProducto` (`idProducto`);
-
---
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- Indices de la tabla `vendido`
+--
+ALTER TABLE `vendido`
+  ADD PRIMARY KEY (`idVenta`),
+  ADD KEY `idProducto` (`idProducto`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -199,7 +217,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `idCompra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCompra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `mensaje`
@@ -211,13 +229,19 @@ ALTER TABLE `mensaje`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `vendido`
+--
+ALTER TABLE `vendido`
+  MODIFY `idVenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
@@ -231,11 +255,10 @@ ALTER TABLE `compra`
   ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `productos_vendidos`
+-- Filtros para la tabla `vendido`
 --
-ALTER TABLE `productos_vendidos`
-  ADD CONSTRAINT `productos_vendidos_ibfk_1` FOREIGN KEY (`idCompra`) REFERENCES `compra` (`idCompra`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `productos_vendidos_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `vendido`
+  ADD CONSTRAINT `vendido_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
