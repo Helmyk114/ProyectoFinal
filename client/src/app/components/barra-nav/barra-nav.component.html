@@ -34,15 +34,15 @@
         <form class="d-flex" role="search">  
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['administrador']">Administrador</a>
+              <a class="nav-icon" [routerLink]="['administrador']"><img src="../../../assets/img/iconos/administrador.png"></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['comprar']">Carrito</a>
+              <a class="nav-icon" [routerLink]="['comprar']"><img src="../../../assets/img/iconos/carrito-de-compras_1.png"></a>
             </li>
   
             <div style="text-align: left; ">
-              <button mat-flat-button [mat-menu-trigger-for]="menu1" id="categorias" style="background-color: #FF3F3B; font-family: 'Lato', sans-serif; font-size: 1.2rem; color:white;">Mi cuenta</button>
+              <button mat-flat-button [mat-menu-trigger-for]="menu1" id="categorias" style="background-color: #FF3F3B; font-family: 'Lato', sans-serif; font-size: 1.2rem; color:white;"><img src="../../../assets/img/iconos/usuario.png"></button>
     
               <mat-menu #menu1="matMenu">
                 <button mat-menu-item [routerLink]="['iniciar-sesion']">Iniciar sesion</button>
