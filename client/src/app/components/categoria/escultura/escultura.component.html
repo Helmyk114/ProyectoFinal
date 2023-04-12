@@ -5,13 +5,15 @@
 <body style="margin-top: 20px; ">
   <div class="container__principal">
       <div class="row" style="justify-content: center;">
-          <div class="card"  *ngFor="let escultura of esculturas">
+          <div class="card"  *ngFor="let escultura of esculturas; let i = index">
               <img class="card-img-top" style="max-height: 200px; margin-right: 100px;" [src]="escultura.imagenProducto == '' ? '../../../assets/img/noImagen.png':escultura.imagenProducto">
               <div class="card-body">
                   <h2 class="card-title">{{escultura.nombreProducto == '' ? 'Nombre del producto': escultura.nombreProducto}}.</h2>
                   <p class="card-text">{{escultura.descripcion == '' ? 'Descripción del producto': escultura.descripcion}}</p>
                   <p>Precio: {{escultura.precio == 0 ? '0': escultura.precio}}$</p>
-                  <a href="#" class="btn btn-secondary" style="margin-right: 100px; background-color: #ff3f3b; font-weight: bold; color: white; border: none;">Comprar</a>
+                  <a (click)="comprar(i)" 
+                  class="btn btn-secondary" 
+                  style="margin-right: 100px; background-color: #ff3f3b; font-weight: bold; color: white; border: none;">Comprar</a>
               </div>
           </div>
       </div>

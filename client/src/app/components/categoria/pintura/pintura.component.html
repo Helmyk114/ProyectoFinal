@@ -5,13 +5,15 @@
 <body style="margin-top: 20px; ">
   <div class="container__principal">
       <div class="row" style="justify-content: center;">
-          <div class="card"  *ngFor="let pintura of pinturas">
+          <div class="card"  *ngFor="let pintura of pinturas; let i = index">
               <img class="card-img-top" style="max-height: 200px; margin-right: 100px;" [src]="pintura.imagenProducto == '' ? '../../../assets/img/noImagen.png':pintura.imagenProducto">
               <div class="card-body">
                   <h2 class="card-title">{{pintura.nombreProducto == '' ? 'Nombre del producto': pintura.nombreProducto}}.</h2>
                   <p class="card-text">{{pintura.descripcion == '' ? 'Descripción del producto': pintura.descripcion}}</p>
                   <p>Precio: {{pintura.precio == 0 ? '0': pintura.precio}}$</p>
-                  <a href="#" class="btn btn-secondary" style="margin-right: 100px; background-color: #ff3f3b; font-weight: bold; color: white; border: none;">Comprar</a>
+                  <a (click)="comprar(i)" 
+                  class="btn btn-secondary" 
+                  style="margin-right: 100px; background-color: #ff3f3b; font-weight: bold; color: white; border: none;">Comprar</a>
               </div>
           </div>
       </div>

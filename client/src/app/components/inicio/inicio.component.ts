@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Compra } from 'src/app/models/Compra';
 import { CompraService } from 'src/app/services/compra.service';
 import { DatosPService } from 'src/app/services/datos-p.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio',
@@ -52,9 +53,14 @@ export class InicioComponent implements OnInit{
       total: precio,
      }
     this.compraService.crearCompra(compra).subscribe(
-      res =>(
-        console.log(res)
-      ),
+      res =>  Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producto agregado',
+        text:'Su producto fue agregado al carrito con exito',
+        showConfirmButton: false,
+        timer: 1000
+      }),
       err =>{
         console.error
       }
