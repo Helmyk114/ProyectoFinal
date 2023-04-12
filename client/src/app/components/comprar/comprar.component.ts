@@ -1,8 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { Compra } from 'src/app/models/Compra';
-import { Producto } from 'src/app/models/Producto';
 import { CompraService } from 'src/app/services/compra.service';
-import { RegistroService } from 'src/app/services/registro.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-comprar',
@@ -11,11 +9,8 @@ import { RegistroService } from 'src/app/services/registro.service';
 })
 export class ComprarComponent implements OnInit{
 
-
   //Para mostrar la compra
   comprar: any = [];
-
- 
 
   constructor(private compraService:CompraService){}
 
@@ -34,7 +29,31 @@ export class ComprarComponent implements OnInit{
     )
   };
 
+  eliminarProducto(id:string){
+    Swal.fire({
+      icon: 'info',
+      title: 'Desea eliminar este producto',
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar'
+    }).then((resultado) =>{
+      if(resultado.isConfirmed){
+        this.compraService.eliminarProducto(id).subscribe(
+          res =>{
+            console.log(res);
+            this.mostrarCompra();
+          })
+      }
+    })
+  };
 
-
-
+  adquirir(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Gracias por su compra',
+      text:'Su compra fue realizada con exito',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  };
 }

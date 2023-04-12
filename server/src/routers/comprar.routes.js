@@ -6,5 +6,6 @@ const controllerC = require('../controllers/comprar.controller');
 
 router.post('/',controllerC.insertarCompra);
 router.get('/',controllerC.mostrarCompra);
+router.delete('/:id',controllerC.eliminarProducto);
 
 module.exports = router;

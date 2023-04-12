@@ -19,5 +19,9 @@ export class FormularioService {
 
   guardarComentario(comentario:Formulario){
     return this.http.post(`${this.url}`,comentario)
+  };
+
+  eliminarComentrio(id:string){
+    return this.http.delete(`${this.url}/${id}`)
   }
 }

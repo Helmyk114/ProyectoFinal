@@ -20,14 +20,13 @@
         
             <div class="box__footer">
                 <h2  style="color: #7a7a7a;">Contactanos</h2>
-                <a href="#">Contacto</a> 
-                <a href="#">Dejanos tu mensaje</a>            
+                <a [routerLink]="['/contacto']" routerLinkActive="router-link-active">Dejanos un mensaje</a>            
             </div>
     
             <div class="box__footer">
                 <h2  style="color: #7a7a7a;">Mi cuenta</h2>
                 <a [routerLink]="['/vender']" routerLinkActive="router-link-active">Vender</a>
-                <a href="#">Registrarme</a>         
+                <a [routerLink]="['/iniciar-sesion']" routerLinkActive="router-link-active">Iniciar sesion</a>         
             </div>
         
             <div class="box__footer">
@@ -49,6 +48,12 @@
                         <a href="https://twitter.com/?lang=es">
                             <img src="../../../assets/img/redesSociales/gorjeo.png" alt="" style="margin-left: 10px;">
                         </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col btn">
+                        <button [routerLink]="['/registro']" routerLinkActive="router-link-active"
+                        style="background-color: #ff3f3b; font-weight: bold; color: white; border: none; font-family:'Lato', sans-serif;">Registrarme</button>
                     </div>
                 </div>
             </div>

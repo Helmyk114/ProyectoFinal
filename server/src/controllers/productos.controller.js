@@ -40,13 +40,13 @@ controllerP.listarProductoOferta = (req,res) =>{
 controllerP.crearProducto = (req,res) =>{
     db.query('INSERT INTO productos SET ?',[req.body]);
     res.json({text: 'Producto Creado'})
-}
+};
 
 controllerP.eliminarProducto = (req,res) =>{
     const { id } = req.params;
     db.query('DELETE FROM productos WHERE idProducto = ?',[id])
     res.json({text: 'Eliminando Producto' + req.params.id})
-}
+};
 
 
 

@@ -1,0 +1,66 @@
+.titulo{
+    margin-top: 15px;
+    margin-left: 140px ;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-family:'Lato', sans-serif;
+}
+
+.titulo2{
+    margin-top: 30px;
+    margin-left: 140px ;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-family:'Lato', sans-serif;
+}
+
+.form-label{
+    margin-top: 10px;
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
+}
+
+.form-select{
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
+}
+
+.form-control{
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
+}
+
+.form-control-file{
+    font-size: 17px;
+    font-family:'Lato', sans-serif;
+}
+
+/* Vista Previa */
+
+.card-body h2{
+    font-size: 17px;
+    text-align: center;
+    font-family:'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.card-body p{
+    font-size: 17px;
+    text-align: center;
+    font-family:'Lato', sans-serif;
+}
+
+/*Carta productos*/
+
+.title{
+    font-size: 17px;
+    font-family:'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.card-title{
+    font-size: 20px;
+    text-align: center;
+    font-family:'Lato', sans-serif;
+    font-weight: 600;
+}

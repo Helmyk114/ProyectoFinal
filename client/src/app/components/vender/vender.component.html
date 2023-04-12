@@ -1,5 +1,5 @@
-<h1 class="text-center my-3">Vende un producto</h1>
-<hr>
+<h1 class="titulo">Vende un producto</h1>
+
 <div>
    <div class="container">
       <div class="row">
@@ -81,13 +81,15 @@
                            </div>
     
                            <div class="form-group">
-                              <label>Url de la imagen</label>
+                              <label class="form-label">Url de la imagen</label>
                               <input class="form-control-file" type="url" name="imagen" [(ngModel)]="producto.imagenProducto"><br>
                            </div>
 
                         </div>
                         <br>
-                           <button class="btn btn-outline-primary" (click)="guardarProducto()">Publicar producto</button>
+                           <button class="btn btn-outline-primary" 
+                           (click)="guardarProducto()"
+                           style="margin-right: 100px; background-color: #ff3f3b; font-weight: bold; color: white; border: none; font-family:'Lato', sans-serif;">Publicar producto</button>
                      </form>
                   </div>
             </div>
@@ -101,12 +103,12 @@
                <div class="card-body">
                   <h2>{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
                   <p>{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
-                  <p>{{producto.precio == 0 ? '0': producto.precio | currency:'$'}}</p>
+                  <p>Precio: {{producto.precio == 0 ? '0': producto.precio | currency:'$'}}</p>
 
                </div>
                
                <div class=" card-footer d-md-flex justify-content-md-end">
-                  <button class="btn btn-outline-success">Comprar</button>
+                  <button class="btn" style="background-color: #ff3f3b; font-weight: bold; color: white; border: none; font-family:'Lato', sans-serif;">Comprar</button>
               </div>
                
             </div>
@@ -115,8 +117,8 @@
    </div>
 </div>
 
-<h1 class="text-center my-3">Productos subidos</h1>
-<hr>
+<h1 class="titulo2">Productos subidos</h1>
+
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-2">
         <div class="card mb-3" style="max-width: 600px; " *ngFor="let articulo of productos">
@@ -134,14 +136,14 @@
 
                   <div class="row">
                      <div class="col">
-                         <label> Categoria:</label>
+                         <label class="title">Categoria:</label>
                      </div>
                      <div class="col">
                          <p>{{articulo.categoria}}</p>
                      </div>
  
                      <div class="col">
-                         <label> Estado:</label>
+                         <label class="title"> Estado:</label>
                      </div>
                      <div class="col">
                          <p>{{articulo.estado}}</p>
@@ -149,13 +151,13 @@
  
                      <div class="row">
                          <div class="col">
-                             <label> Descuento:</label>
+                             <label class="title">Descuento:</label>
                          </div>
                          <div class="col">
                              <p>{{articulo.descuento}}</p>
                          </div>
                          <div class="col">
-                             <label> Porcentaje:</label>
+                             <label class="title"> Porcentaje:</label>
                          </div>
                          <div class="col">
                              <p>{{articulo.valor}}%</p>
@@ -164,13 +166,13 @@
 
                      <div class="row">
                         <div class="col">
-                            <label>Cantidad:</label>
+                            <label class="title">Cantidad:</label>
                         </div>
                         <div class="col">
                             <p>{{articulo.cantidad}}</p>
                         </div>
                         <div class="col">
-                            <label>Precio:</label>
+                            <label class="title">Precio:</label>
                         </div>
                         <div class="col">
                             <p>{{articulo.precio | currency:'$'}}</p>
@@ -178,7 +180,10 @@
                     </div>
 
                     <div class="card-footer d-md-flex justify-content-md-end">
-                        <button class="btn btn-outline-danger btn-block" (click)="eliminarProducto(articulo.idProducto)">Eliminar Publicación</button>
+                        <button class="btn btn-outline-danger btn-block" 
+                        (click)="eliminarProducto(articulo.idProducto)"
+                        style="font-family:'Lato', sans-serif;"
+                        >Eliminar Publicación</button>
                     </div>
               </div>
             </div>

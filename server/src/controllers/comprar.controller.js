@@ -8,7 +8,7 @@ controllerC.insertarCompra = (req,res) =>{
 };
 
 controllerC.mostrarCompra = (req,res) =>{
-    db.query('SELECT productos.nombreProducto, compra.unidades, productos.precio, compra.total FROM compra inner join productos on compra.idProducto = productos.idProducto',(err, rows,fields) =>{
+    db.query('SELECT productos.nombreProducto, compra.unidades, productos.precio, compra.total, compra.idCompra FROM compra inner join productos on compra.idProducto = productos.idProducto',(err, rows,fields) =>{
         if(!err){
             res.json(rows);
         }
@@ -16,6 +16,12 @@ controllerC.mostrarCompra = (req,res) =>{
             console.error(err)
         }
     });
+};
+
+controllerC.eliminarProducto = (req,res) =>{
+    const { id } = req.params;
+    db.query('DELETE FROM compra WHERE idCompra = ?',[id]);
+    res.json({text: 'Producto eliminado de la compra'})
 }
 
 module.exports = controllerC;

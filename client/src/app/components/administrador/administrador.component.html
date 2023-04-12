@@ -9,7 +9,9 @@
           <p class="card-text">Mensaje: {{comentario.mensaje}}</p>
         </div>
         <div class="col-xl-2">
-          <button class="btn btn1 btn-md"  style="margin-left: 90px; margin-bottom: 5px; background-color: #ff3f3b; font-weight: bold; color: white; border: none; font-family:'Lato', sans-serif;">Eliminar</button>
+          <button class="btn btn1 btn-md"  
+          (click)="eliminarComentario(comentario.idMensaje)"
+          style="margin-left: 90px; margin-bottom: 5px; background-color: #ff3f3b; font-weight: bold; color: white; border: none; font-family:'Lato', sans-serif;">Eliminar</button>
         </div>
     </div>
   </div>
