@@ -20,7 +20,7 @@ export class RolesGuard implements CanActivate {
     let decodetoken:any = {};
     decodetoken = decode(token!)
     
-    console.log(decodetoken.idUsuario)
+    console.log(decodetoken.rol)
 
     if(!this.autorizacionService.estaAutorizado() || decodetoken.rol !== expectedRole ){
       

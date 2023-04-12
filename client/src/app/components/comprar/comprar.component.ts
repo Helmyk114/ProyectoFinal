@@ -15,13 +15,7 @@ export class ComprarComponent implements OnInit{
   //Para mostrar la compra
   comprar: any = [];
 
-  //Para guardar una compra
-  compras: Compra ={
-    idUsuario: 0,
-    idProducto: 0,
-    unidades: 0,
-    total: 0,
-  }
+ 
 
   constructor(private compraService:CompraService){}
 
@@ -38,7 +32,9 @@ export class ComprarComponent implements OnInit{
         console.error(err)
       )
     )
-  }
+  };
+
+
 
 
 }

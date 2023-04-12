@@ -100,13 +100,13 @@
     <body style="margin-top: 20px; ">
         <div class="container__principal">
             <div class="row" style="justify-content: center;">
-                <div class="card"  *ngFor="let producto of productos">
+                <div class="card"  *ngFor="let producto of productos; let i = index">
                     <img class="card-img-top" style="max-height: 200px; margin-right: 100px;" [src]="producto.imagenProducto == '' ? '../../../assets/    img/    noImagen.png':producto.imagenProducto">
                     <div class="card-body">
                         <h2 class="card-title">{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
                         <p class="card-text">{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
                         <p>Precio: {{producto.precio == 0 ? '0': producto.precio | currency:'$'}}</p>
-                        <a  class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
+                        <a (click)="comprar(i)" class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
                     </div>
                 </div>
             </div>

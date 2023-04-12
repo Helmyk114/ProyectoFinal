@@ -13,15 +13,51 @@ export class InicioComponent implements OnInit{
   //Para mostrar los productos
   productos:any=[];
 
+   //Para guardar una compra
+   compras: Compra ={
+    idUsuario: 1,
+    idProducto: 0,
+    unidades: 0,
+    total: 0,
+  }
 
-  constructor(private datosPService:DatosPService){}
+  constructor(private datosPService:DatosPService,
+              private compraService:CompraService){
+  
+
+                
+              }
 
   ngOnInit(): void {
-       this.datosPService.obtenerProductos().subscribe(
+    this.mostrarProductos()
+  };
+
+  mostrarProductos(){
+    this.datosPService.obtenerProductos().subscribe(
       res =>{
         this.productos = res;
       },
       err => console.error(err)
+    )
+  };
+
+  comprar(index:number){
+    const idProductos = this.productos[index].idProducto
+    const precio = this.productos[index].precio
+    console.log(idProductos)
+     const compra = {
+      idUsuario: 1,
+      idProducto: idProductos,
+      unidades: 1,
+      total: precio,
+     }
+    this.compraService.crearCompra(compra).subscribe(
+      res =>(
+        console.log(res)
+      ),
+      err =>{
+        console.error
+      }
     )
   };
 }
