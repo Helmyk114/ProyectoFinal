@@ -46,14 +46,27 @@ export class ComprarComponent implements OnInit{
     })
   };
 
-  adquirir(){
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Gracias por su compra',
-      text:'Su compra fue realizada con exito',
-      showConfirmButton: false,
-      timer: 1500
-    })
+  adquirir(index:number){
+    const idProductos = this.comprar[index].idProducto
+    const unidades = this.comprar[index].unidades
+    console.log(idProductos)
+    console.log(unidades)
+    const datos = {
+      idProducto: idProductos,
+      unidades: unidades
+    }
+    this.compraService.aquirir(datos).subscribe(
+      res => Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Gracias por su compra',
+        text:'Su compra fue realizada con exito',
+        showConfirmButton: false,
+        timer: 1500
+      }),
+      err =>(
+        console.error(err)
+      )
+    )
   };
 }

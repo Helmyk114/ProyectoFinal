@@ -23,11 +23,7 @@ export class InicioComponent implements OnInit{
   }
 
   constructor(private datosPService:DatosPService,
-              private compraService:CompraService){
-  
-
-                
-              }
+              private compraService:CompraService){}
 
   ngOnInit(): void {
     this.mostrarProductos()
