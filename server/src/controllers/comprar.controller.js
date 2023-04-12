@@ -8,7 +8,14 @@ controllerC.insertarCompra = (req,res) =>{
 };
 
 controllerC.mostrarCompra = (req,res) =>{
-    db.query('SELECT ')
+    db.query('SELECT productos.nombreProducto, compra.unidades, productos.precio, compra.total FROM compra inner join productos on compra.idProducto = productos.idProducto',(err, rows,fields) =>{
+        if(!err){
+            res.json(rows);
+        }
+        else{
+            console.error(err)
+        }
+    });
 }
 
 module.exports = controllerC;

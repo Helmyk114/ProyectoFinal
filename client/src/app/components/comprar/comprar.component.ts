@@ -11,6 +11,10 @@ import { RegistroService } from 'src/app/services/registro.service';
 })
 export class ComprarComponent implements OnInit{
 
+
+  //Para mostrar la compra
+  comprar: any = [];
+
   //Para guardar una compra
   compras: Compra ={
     idUsuario: 0,
@@ -19,31 +23,22 @@ export class ComprarComponent implements OnInit{
     total: 0,
   }
 
-  total: number = 0
-  productos : Producto[]=
-  [
-  
-  ]
-
-  constructor(private compraService:CompraService,
-              private registroService:RegistroService){}
+  constructor(private compraService:CompraService){}
 
   ngOnInit(): void {
-    this.productos.forEach(producto => {
-      if (producto.cantidad) {
-        if (producto.precio) // Verificar si la propiedad existe
-        this.total += producto.cantidad * producto.precio;
-      }
-    });
+    this.mostrarCompra()
   };
 
-  guardarCompra(){
-    this.compraService.crearCompra(this.compras).subscribe(
-      res => (console.log(res)),
+  mostrarCompra(){
+    this.compraService.mostrarCompra().subscribe(
+      res =>(
+        this.comprar = res
+      ),
       err =>(
         console.error(err)
       )
     )
   }
+
 
 }

@@ -3,22 +3,25 @@
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Cantidad</th>
+      <th>Unidades</th>
       <th>Precio Unitario</th>
+      <th>Total</th>
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let producto of productos">
+    <ng-container *ngFor="let compra of comprar">
     <tr>
-      <td>{{producto.nombreProducto}}</td>
-      <td>{{producto.cantidad}}</td>
-      <td>{{producto.precio | currency:'COP'}}</td>
+      <td>{{compra.nombreProducto}}</td>
+      <td>{{compra.unidades}}</td>
+      <td>{{compra.precio | currency:'COP'}}</td>
+      <td>{{compra.total | currency:'COP'}}</td>
+
     </tr>
     </ng-container>
   </tbody>
 </table>
 
-<p class="text-end">Total {{total | currency:'COP'}}</p>
+<!-- <p class="text-end">Total {{compra.total | currency:'COP'}}</p> -->
 <div class="text-end">
     <button >Comprar</button>
 </div>

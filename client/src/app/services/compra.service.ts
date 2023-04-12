@@ -15,4 +15,8 @@ export class CompraService {
   crearCompra(compras:Compra){
     return this.http.post(`${this.url}`,compras);
   }
+
+  mostrarCompra(){
+    return this.http.get(`${this.url}`)
+  }
 }
