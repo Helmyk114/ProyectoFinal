@@ -1,6 +1,15 @@
 #banner{
     width: 100%;
     height: 60%;
+    border-radius: 10px;
+}
+
+#titulo {
+    font-family:'Lato', sans-serif;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-left: 105px;
+    margin-bottom: 20px;
 }
 
 .container__principal .card{
@@ -24,20 +33,21 @@
 }
   
   
-.container__principal .card h4{
+.container__principal .card h2{
     font-weight: 600;
+    font-family:'Lato', sans-serif;
 }
   
 .container__principal .card p{
-    padding: 0 1rem;
+    margin-top: -10px;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
+    font-family:'Lato', sans-serif;
 }
   
 .container__principal .card a {
     font-weight: 200;
-    text-decoration: none;
-    color: #3498db;
+    font-family:'Lato', sans-serif;
 }
   
 .container__principal .card a {

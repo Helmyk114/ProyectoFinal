@@ -1,6 +1,5 @@
-<h1>Comentarios de los usuarios</h1>
-<hr>
-<div class="container">
+<h1 class="titulo">Comentarios de los usuarios</h1>
+<div class="container-fluid">
   <div class="row" style="justify-content: center;">
      <div class="card" style="width: 18rem;" *ngFor="let comentario of comentarios">
         <div class="card-body">
@@ -8,6 +7,9 @@
           <p class="card-text">Correo: {{comentario.correo}}</p>
           <p class="card-text">Telefono: {{comentario.telefono}}</p>
           <p class="card-text">Mensaje: {{comentario.mensaje}}</p>
+        </div>
+        <div class="col-xl-2">
+          <button class="btn btn1 btn-md"  style="margin-left: 90px; margin-bottom: 5px; background-color: #ff3f3b; font-weight: bold; color: white; border: none; font-family:'Lato', sans-serif;">Eliminar</button>
         </div>
     </div>
   </div>

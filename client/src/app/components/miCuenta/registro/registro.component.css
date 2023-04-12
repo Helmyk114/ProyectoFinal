@@ -6,7 +6,25 @@
 
 #titulo{
     margin-left: 140px ;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-family:'Lato', sans-serif;
+}
+
+.form-label{
+    margin-top: 10px;
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
+}
+
+.form-control{
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
+}
+
+.form-select{
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
 }
 
 #form{

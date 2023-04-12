@@ -1,0 +1,22 @@
+.titulo{
+    margin-left: 140px ;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-family:'Lato', sans-serif;
+}
+
+.card{
+    margin: 5px 5px 5px 5px;
+}
+
+.card-title{
+    font-weight: 600;
+    font-family:'Lato', sans-serif;
+}
+
+.card-body{
+    margin-top: 10px;
+    font-size: 17px;
+    font-family:'Lato', sans-serif; 
+}

@@ -1,21 +1,21 @@
 <ngb-carousel>
     <ng-template ngbSlide style="margin-top: 5px;">
       <div class="wrapper">
-        <img src="../../../assets/img/bannerInicio/baner1.jpeg" alt="Random first slide" style="width: 100%; height: 60%;">
+        <img src="../../../assets/img/bannerInicio/baner1.jpeg" alt="Random first slide" style="width: 100%; height: 60%; border-radius: 10px;">
       </div>
       <div class="carousel-caption">
       </div>
     </ng-template>
     <ng-template ngbSlide>
       <div class="wrapper">
-        <img src="../../../assets/img/bannerInicio/baner2.jpeg" alt="Random second slide" style="width: 100%; height: 60%;">
+        <img src="../../../assets/img/bannerInicio/baner2.jpeg" alt="Random second slide" style="width: 100%; height: 60%; border-radius: 10px;">
       </div>
       <div class="carousel-caption">
       </div>
     </ng-template>
     <ng-template ngbSlide>
       <div class="wrapper">
-        <img src="../../../assets/img/bannerInicio/baner3.jpeg"  alt="Random third slide" style="width: 100%; height: 60%;">
+        <img src="../../../assets/img/bannerInicio/baner3.jpeg"  alt="Random third slide" style="width: 100%; height: 60%; border-radius: 10px;">
       </div>
       <div class="carousel-caption">
       </div>
@@ -23,7 +23,7 @@
 </ngb-carousel>
 
 <div class="container" >
-    <h1 class="title">Categorias</h1>
+    <h1 class="title mt-3">Categorias</h1>
 
     <div class="row">
         <div class="col-3" id="incioCarta">
@@ -96,7 +96,7 @@
     </div>
 </div>
 
-<h1 class="title">Productos</h1>
+<h1 class="title-p mt-4">Productos</h1>
     <body style="margin-top: 20px; ">
         <div class="container__principal">
             <div class="row" style="justify-content: center;">
@@ -106,23 +106,24 @@
                         <h2 class="card-title">{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
                         <p class="card-text">{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
                         <p>Precio: {{producto.precio == 0 ? '0': producto.precio | currency:'$'}}</p>
-                        <a (click)="comprar(i)" class="btn btn-secondary" style="margin-right: 100px;">Comprar</a>
+                        <a (click)="comprar(i)" class="btn btn-secondary" style="margin-right: 100px; background-color: #ff3f3b; font-weight: bold; color: white; border: none;">Comprar</a>
                     </div>
                 </div>
             </div>
         </div>
     </body>
 
-<hr>
 
-<div class="conteiner" style="padding: -1%; background-color: #efefef;">
+
+<div class="conteiner">
     <div >
         <h1 style="text-align: center;">¿Que es +Art?</h1>
 
         <div style="width: 80%;">
-            <p style="margin-left: 40%;font-family:inherit">Es un negocio en línea emocionante y vibrante que permite a los amantes de las artesanías descubrir y comprar productos únicos y auténticos, y a los artistas y artesanos mostrar y vender su trabajo al mundo. Es un lugar donde la creatividad, la autenticidad y la calidad se unen para ofrecer una experiencia de compra excepcional y satisfactoria para todos.</p>
+            <p>Es un negocio en línea emocionante y vibrante que permite a los amantes de las artesanías descubrir y comprar productos únicos y auténticos, y a los artistas y artesanos mostrar y vender su trabajo al mundo. Es un lugar donde la creatividad, la autenticidad y la calidad se unen para ofrecer una experiencia de compra excepcional y satisfactoria para todos.</p>
         </div>
     </div>
 </div>
 
+<section class="curved"></section>
 

@@ -1,14 +1,8 @@
 footer{
     width: 100%;
     padding: 50px 0px;
-    /* background-image: url(../Images/background-footer.svg); */
     background-size: cover;
-
-    /*background-color: #d0f0f8;
-    -webkit-mask-image: url("../Images/background-footer.svg");
-    mask-image: url("../Images/background-footer.svg");
-    -webkit-mask-size: cover;
-    mask-size: cover;*/
+    margin-top: -100px;
 }
 
 .container__footer{
@@ -24,6 +18,7 @@ footer{
     display: flex;
     flex-direction: column;
     padding: 20px;
+    font-family:'Lato', sans-serif;
 }
 
 .box__footer .logo img{
@@ -36,18 +31,21 @@ footer{
     font-weight: 500;
     color: #7a7a7a;
     font-size: 18px;
+    font-family:'Lato', sans-serif;
 }
 
 .box__footer h2{
     margin-top: 20px;
     color: #343434;
-    font-weight: 700;
+    font-weight: bold;
+    font-family:'Lato', sans-serif;
 }
 
 .box__footer a{
     margin-bottom: 10px;
     color: #7a7a7a;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .box__footer a:hover{
