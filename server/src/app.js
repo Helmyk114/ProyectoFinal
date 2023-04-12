@@ -9,6 +9,7 @@ const productoRoutes = require('./routers/productos.routes');
 const usuariosRoutes = require('./routers/usuarios.routes');
 const formularioRoutes = require('./routers/formulario.routes');
 const registroURoutes = require('./routers/registroU.routes');
+const compraRoutes = require('./routers/comprar.routes')
 
 
 //Mediadores
@@ -30,6 +31,9 @@ app.use('/formulario',formularioRoutes);
 
 //Ruta para el registro de usuarios
 app.use('/registro',registroURoutes);
+
+//Ruta para la compra
+app.use('/compra',compraRoutes);
 
 //Puerto de conexion al servidor
 app.listen(3000,() =>{

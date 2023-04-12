@@ -7,6 +7,7 @@ controllerU.listarUsuarios = (req,res) =>{
     db.query('SELECT * FROM usuario', (err, row, fields) =>{
         if(!err){
             res.json(row);
+            
         }
         else
         {
@@ -17,7 +18,7 @@ controllerU.listarUsuarios = (req,res) =>{
 
 controllerU.iniciarSesion = (req,res) =>{
     const { usuario, contrasena} = req.body;
-    db.query('SELECT usuario, rol FROM usuario WHERE usuario = ? AND contrasena = ?',[usuario,contrasena], (err,row,fields) =>{
+    db.query('SELECT idUsuario, usuario, rol FROM usuario WHERE usuario = ? AND contrasena = ?',[usuario,contrasena], (err,row,fields) =>{
         if(!err){
             console.log(row);
             if (row.length > 0) {

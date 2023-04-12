@@ -15,4 +15,8 @@ export class RegistroService {
   crearUsuario(registroU:ResgistroU){
     return this.http.post(`${this.url}`,registroU);
   }
+
+  consultarUsuario(){
+    return this.http.get(`${this.url}`)
+  }
 }

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AutorizacionService } from '../services/autorizacion.service';
 
 import decode from 'jwt-decode'
-import { Usuario } from '../models/Usuario';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,17 @@ export class RolesGuard implements CanActivate {
     const token = localStorage.getItem('token');
     let decodetoken:any = {};
     decodetoken = decode(token!)
-
-    console.log(decodetoken.rol)
+    
+    console.log(decodetoken.idUsuario)
 
     if(!this.autorizacionService.estaAutorizado() || decodetoken.rol !== expectedRole ){
       
+      Swal.fire({
+        icon:'warning',
+        title:'Usuario no autorizado',
+        text:'Solo el administrador puede acceder'
+
+      })
       console.log('Usuario no autorizado para la vista');
       return false;
     }

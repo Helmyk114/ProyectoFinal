@@ -1,1 +1,24 @@
-<p>comprar works!</p>
+<h3>Carrito de Compras</h3>
+<table class="table table-primary table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Precio Unitario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let producto of productos">
+    <tr>
+      <td>{{producto.nombreProducto}}</td>
+      <td>{{producto.cantidad}}</td>
+      <td>{{producto.precio | currency:'COP'}}</td>
+    </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<p class="text-end">Total {{total | currency:'COP'}}</p>
+<div class="text-end">
+    <button >Comprar</button>
+</div>

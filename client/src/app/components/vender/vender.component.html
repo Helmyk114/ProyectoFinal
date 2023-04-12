@@ -101,7 +101,7 @@
                <div class="card-body">
                   <h2>{{producto.nombreProducto == '' ? 'Nombre del producto': producto.nombreProducto}}.</h2>
                   <p>{{producto.descripcion == '' ? 'Descripción del producto': producto.descripcion}}</p>
-                  <p>{{producto.precio == 0 ? '0': producto.precio}}$</p>
+                  <p>{{producto.precio == 0 ? '0': producto.precio | currency:'$'}}</p>
 
                </div>
                
@@ -173,7 +173,7 @@
                             <label>Precio:</label>
                         </div>
                         <div class="col">
-                            <p>{{articulo.precio}}$</p>
+                            <p>{{articulo.precio | currency:'$'}}</p>
                         </div>
                     </div>
 

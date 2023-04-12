@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Compra } from 'src/app/models/Compra';
+import { CompraService } from 'src/app/services/compra.service';
 import { DatosPService } from 'src/app/services/datos-p.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class InicioComponent implements OnInit{
   //Para mostrar los productos
   productos:any=[];
 
+
   constructor(private datosPService:DatosPService){}
 
   ngOnInit(): void {
@@ -20,6 +23,5 @@ export class InicioComponent implements OnInit{
       },
       err => console.error(err)
     )
-  }
-
+  };
 }
